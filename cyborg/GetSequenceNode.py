@@ -29,6 +29,3 @@ def carver2(self):
 	self.Feature = json.dumps(para)
 
 carver2(self)
-
-
-
