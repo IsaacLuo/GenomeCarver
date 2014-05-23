@@ -93,7 +93,7 @@ def getGeneIDs(species,cursor):
 	cursor.execute("select id from neochromosome_feature where feature = 'gene' and chromosome_id in (select id from neochromosome_chromosome where species = '%s')"%(species))
 	return [x[0] for x in cursor.fetchall()]
 
-def checkPT(geneName,species,carve,checkBoundry, cursor):
+def checkPT(geneName,species,carve,checkBoundary, cursor):
 	cursor.execute("SELECT id, name, char_length(chromosome) FROM neochromosome_chromosome WHERE species = '%s'"%(species));
 	chromosomeLengthList =  cursor.fetchall()
 
@@ -114,10 +114,10 @@ def checkPT(geneName,species,carve,checkBoundry, cursor):
 		pt = getTerminator(selectGeneFeature,chromosomeLength)
 	else:
 		pt = selectGeneFeature
-		checkBoundry = "False"
+		checkBoundary = "False"
 #	print pt 
 
-	if checkBoundry == "True":
+	if checkBoundary == "True":
 		r = checkRestriction(pt,cursor)
 		if (carve =="promoter" and pt[4]=="+") or (carve=="terminator" and pt[4]=='-'):
 			pt = trimLeft(pt,r)
