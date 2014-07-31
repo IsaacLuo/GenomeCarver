@@ -1,7 +1,7 @@
 // Genome Carver Package.js
 
 // NOTE: sourceURL needs a line above it.  Don't know why...
-//@ sourceURL=/siteversion/cyborg/applications/cai_lab/GenomeCarver/cyborg/GenomeCarverPackage.js
+//@ sourceURL=/siteversion/cyborg/api/v1/appdata/cai_lab/GenomeCarver/cyborg/GenomeCarverPackage.js
 
 // Copyright 2014 Autodesk, Inc.  All rights reserved. 
 // This computer source code and related instructions and comments
@@ -57,7 +57,7 @@ Autodesk.Cyborg.Applications.GenomeCarver.selectFactory = function (node){
         };
     };
 
-	var script = '/siteversion/cyborg/applications/cai_lab/GenomeCarver/cyborg/carveNode.py';
+	var script = '/siteversion/cyborg/api/v1/appdata/cai_lab/GenomeCarver/cyborg/carveNode.py';
     var content;
     adskrt.ajax({ 
         url: script, 
@@ -76,7 +76,7 @@ Autodesk.Cyborg.Applications.GenomeCarver.FeatureFactory = function (node){
     node.addField('Selection', 'String', null);
     node.addField('Sequence', 'String', null);
     node.addField('Feature', 'String', null);
-	var script = '/siteversion/cyborg/applications/cai_lab/GenomeCarver/cyborg/GetSequenceNode.py';
+	var script = '/siteversion/cyborg/api/v1/appdata/cai_lab/GenomeCarver/cyborg/GetSequenceNode.py';
     var content;
     adskrt.ajax({ 
         url: script, 
@@ -100,7 +100,7 @@ Autodesk.Cyborg.Applications.GenomeCarver.carveFactory = function (node){
     node.addField('Primer5', 'String', null);
     node.addField('Primer3', 'String', null);
     node.addField('Report', 'String', null);
-	var script = '/siteversion/cyborg/applications/cai_lab/GenomeCarver/cyborg/CreatePrimerNode.py';
+	var script = '/siteversion/cyborg/api/v1/appdata/cai_lab/GenomeCarver/cyborg/CreatePrimerNode.py';
     var content;
     adskrt.ajax({ 
         url: script, 

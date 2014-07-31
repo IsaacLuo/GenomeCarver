@@ -1,7 +1,7 @@
 // Genome Carver.js
 
 // NOTE: sourceURL needs a line above it.  Don't know why...
-//@ sourceURL=/siteversion/cyborg/applications/cai_lab/GenomeCarver/cyborg/GenomeCarver.js
+//@ sourceURL=/siteversion/cyborg/api/v1/appdata/cai_lab/GenomeCarver/cyborg/GenomeCarver.js
 
 // Copyright 2014 Autodesk, Inc.  All rights reserved. 
 // This computer source code and related instructions and comments
@@ -11,28 +11,28 @@
 // by any third party without the prior written consent of 
 // Autodesk, Inc.
 
-adskrt._req('/siteversion/core/scripts/brep/body.js');
-adskrt._req('/siteversion/core/scripts/brep/proceduralfeature.js');
-adskrt._req('/siteversion/core/scripts/brep/procedures.js');
-adskrt._req('/siteversion/core/scripts/brep/procedures/text.js');
-adskrt._req('/siteversion/core/scripts/scene/style.js');
-adskrt._req('/siteversion/core/scripts/scene/protein.js');
-adskrt._req('/siteversion/core/scripts/math/vector3.js');
-adskrt._req('/siteversion/core/scripts/math/matrix4.js');
-adskrt._req('/siteversion/core/scripts/math/globals.js');
-adskrt._req('/siteversion/core/scripts/libs/asm/api.js');
-adskrt._req('/siteversion/core/scripts/math/point3.js');
-adskrt._req('/siteversion/cyborg/scripts/transposable/shuttle.js');
-adskrt._req('/siteversion/cyborg/scripts/app/nodes/asmutilities.js');
-adskrt._req('/siteversion/cyborg/scripts/app/nodes/utilities.js');
-adskrt._req('/siteversion/cyborg/scripts/core/math.js');
-adskrt._req('/siteversion/cyborg/applications/cai_lab/GenomeCarver/cyborg/GenomeCarverPackage.js');
+// adskrt._req('/siteversion/core/scripts/brep/body.js');
+// adskrt._req('/siteversion/core/scripts/brep/proceduralfeature.js');
+// adskrt._req('/siteversion/core/scripts/brep/procedures.js');
+// adskrt._req('/siteversion/core/scripts/brep/procedures/text.js');
+// adskrt._req('/siteversion/core/scripts/scene/style.js');
+// adskrt._req('/siteversion/core/scripts/scene/protein.js');
+// adskrt._req('/siteversion/core/scripts/math/vector3.js');
+// adskrt._req('/siteversion/core/scripts/math/matrix4.js');
+// adskrt._req('/siteversion/core/scripts/math/globals.js');
+// adskrt._req('/siteversion/core/scripts/libs/asm/api.js');
+// adskrt._req('/siteversion/core/scripts/math/point3.js');
+// adskrt._req('/siteversion/cyborg/scripts/transposable/shuttle.js');
+// adskrt._req('/siteversion/cyborg/scripts/app/nodes/asmutilities.js');
+// adskrt._req('/siteversion/cyborg/scripts/app/nodes/utilities.js');
+// adskrt._req('/siteversion/cyborg/scripts/core/math.js');
+adskrt._req('/siteversion/cyborg/api/v1/appdata/cai_lab/GenomeCarver/cyborg/GenomeCarverPackage.js');
 
 Autodesk.Cyborg.Nodes.Services.setWorkspaceName(self.workspaceID, 'Genome Carver');
 setWorkspaceTitle("Genome Carver");
 Autodesk.Cyborg.Note.title="Getting_Started";
 Autodesk.Cyborg.Note.body= 'Created in collaboration with Cai Lab at the University of Edinburgh, the GenomeCarver application harvests and packages biological parts from model genomes based on various part Standards. GenomeCarver carves DNA sequences from genome feature files (GFF) based on user selection, ensures sequence compatibility with various Standards, and outputs optimized parts. \nTo get started, identify a species genome. Then, select a chromosome, feature, and target part of interest. Specify the carve Standard of your Feature selection, and see the resulting carved Part. Open the resulting Part report in a browser to see its visualization.';
-setWorkspaceIcon('/siteversion/cyborg/applications/cai_lab/GenomeCarver/cyborg/res/genomeCarverWorkspace.png');
+setWorkspaceIcon('/siteversion/cyborg/api/v1/appdata/cai_lab/GenomeCarver/cyborg/res/genomeCarverWorkspace.png');
 
 // NODES
 // Define Nodes to be used here
@@ -63,11 +63,11 @@ var carveAction = {
     'args': carveArgs
 };
 var action
-createCassette('Genome Carver', '/siteversion/cyborg/applications/cai_lab/GenomeCarver/cyborg/res/GenomeCarver.png');
-addCassetteItem('Genome Carver', 'GenomeCarver.Genome', '/siteversion/cyborg/applications/cai_lab/GenomeCarver/cyborg/res/DNA sequence.png');
-addCassetteItem('Genome Carver', selectAction, '/siteversion/cyborg/applications/cai_lab/GenomeCarver/cyborg/res/Feature.png');
+createCassette('Genome Carver', '/siteversion/cyborg/api/v1/appdata/cai_lab/GenomeCarver/cyborg/res/GenomeCarver.png');
+addCassetteItem('Genome Carver', 'GenomeCarver.Genome', '/siteversion/cyborg/api/v1/appdata/cai_lab/GenomeCarver/cyborg/res/DNA sequence.png');
+addCassetteItem('Genome Carver', selectAction, '/siteversion/cyborg/api/v1/appdata/cai_lab/GenomeCarver/cyborg/res/Feature.png');
 // addCassetteItem('Genome Carver', 'GenomeCarver.Feature', 'print3d/res/print.png');
-addCassetteItem('Genome Carver', carveAction, '/siteversion/cyborg/applications/cai_lab/GenomeCarver/cyborg/res/CutFeature.png');
+addCassetteItem('Genome Carver', carveAction, '/siteversion/cyborg/api/v1/appdata/cai_lab/GenomeCarver/cyborg/res/CutFeature.png');
 // addCassetteItem('Genome Carver', 'GenomeCarver.Part', 'print3d/res/print.png');
 
 // DEFINE INITIAL WORKSPACE
