@@ -154,22 +154,22 @@ def carver2(self):
 
     cursor = connection.cursor()
 
-    featureName = self.FeatureName
-    if self.Species == "S.cerevisiae":
+    featureName = self['FeatureName']
+    if self['Species'] == "S.cerevisiae":
         species = "SC"
-    elif self.Species == "A.thaliana":
+    elif self['Species'] == "A.thaliana":
         species = "AT"
-    elif self.Species == "A.gossypii":
+    elif self['Species'] == "A.gossypii":
         species = "AG"
     else:
-        species = self.Species
+        species = self['Species']
 
-    TargetPart = self.TargetPart
-    checkBoundary = self.CheckBoundary
+    TargetPart = self['TargetPart']
+    checkBoundary = self['CheckBoundary']
     pt = checkPT(featureName,species,TargetPart,checkBoundary,cursor); 
 
-    self.StartBasePair = pt[2]
-    self.EndBasePair = pt[3]
-    self.Selection = json.dumps({"Species":self.Species,"Chromosome":self.Chromosome,"FeatureName":self.FeatureName, "CheckBoundary": self.CheckBoundary,"CarvedFeature":pt,"TargetPart":self.TargetPart})
+    self['StartBasePair'] = pt[2]
+    self['EndBasePair'] = pt[3]
+    self['Selection'] = json.dumps({"Species":self['Species'],"Chromosome":self['Chromosome'],"FeatureName":self['FeatureName'], "CheckBoundary": self['CheckBoundary'],"CarvedFeature":pt,"TargetPart":self['TargetPart']})
 
 carver2(self)

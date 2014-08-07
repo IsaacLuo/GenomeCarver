@@ -18,14 +18,14 @@ def carver2(self):
     
     cursor = connection.cursor()
     
-    para = json.loads(self.Selection)
+    para = json.loads(self['Selection'])
     feature  = para["CarvedFeature"]
     
     for i in range(0,4):
         feature[i] = int(feature[i])
     
-    self.Sequence = getSequence(feature,cursor)
-    para["Sequence"]=self.Sequence
-    self.Feature = json.dumps(para)
+    self['Sequence'] = getSequence(feature,cursor)
+    para["Sequence"]=self['Sequence']
+    self['Feature'] = json.dumps(para)
 
 carver2(self)
