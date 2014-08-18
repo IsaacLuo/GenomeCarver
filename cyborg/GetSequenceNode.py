@@ -14,7 +14,8 @@ def getSequence(feature,cursor):
         raise "neither + nor -"
 
 def carver2(self):
-    connection = psycopg2.connect(database="neochromosome", user="cyborg", password = "adsk2cailab", host="git.cailab.org", port="5432")
+    # connection = psycopg2.connect(database="neochromosome", user="cyborg", password = "adsk2cailab", host="git.cailab.org", port="5432")
+    connection = psycopg2.connect(database="neochromosome", user="cyborg", password = "adsk2cailab", host="vm5.cailab.org", port="5432")
     
     cursor = connection.cursor()
     
